@@ -11,7 +11,7 @@ import {
  
 const BreadCrumb = () => {
   return (
-    <div className='BreadCrumb sm:px-[16px]' dir='rtl'>
+    <div className='BreadCrumb sm:p-[16px]' dir='rtl'>
           <div className="container">
 
         <Breadcrumb>

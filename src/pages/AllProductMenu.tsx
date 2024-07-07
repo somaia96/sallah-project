@@ -6,7 +6,7 @@ import ContentContainer from '../components/ProjectComponent/AllProductMenu/Cont
 const AllProductMenu = () => {
   return (
     <div className='AllProductMenu flex flex-col'>
-      <Header/>
+      {/* <Header/> */}
       <BreadCrumb/>
       <ContentContainer/>
     </div>

@@ -1,3 +1,4 @@
+import { RouterProvider } from 'react-router-dom'
 import './App.css'
 import { Button } from './components/ui/button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './components/ui/card'
@@ -5,6 +6,8 @@ import { Input } from './components/ui/input'
 import { Label } from './components/ui/label'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './components/ui/select'
 import AllProductMenu from './pages/AllProductMenu'
+import Layout from './pages/Layout'
+import Router from './router'
 
 function App() {
 
@@ -45,7 +48,8 @@ function App() {
         <Button>Deploy</Button>
       </CardFooter>
     </Card> */}
-    <AllProductMenu/>
+    {/* <AllProductMenu/> */}
+    <Router/>
         </>
   )
 }

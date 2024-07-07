@@ -1,4 +1,5 @@
 import * as React from "react"
+import { IDataType } from "../../../interfaces";
 import { Button } from "../../ui/button"
 import {
   Card,
@@ -13,21 +14,21 @@ const ListContainer = () => {
     let tr= fetch("http://localhost:5173/src/data/data.json").then(data=>data.json()).then(data=>setData(data))
   }, [])
   // let r = [{"r":1,"s":"d"}];
-  type dataType= {
-    id: number,
-    name: string,
-    isNew: boolean,
-    discount: (string | number),
-    evaluation: number,
-    price: number,
-    picture: string,
-    category: string,
-    details: string
+//   type dataType= {
+//     id: number,
+//     name: string,
+//     isNew: boolean,
+//     discount: (string | number),
+//     evaluation: number,
+//     price: number,
+//     picture: string,
+//     category: string,
+//     details: string
 
-}
+// }
   return (
     <div className='ListContainer md:w-auto lg:w-[893px] flex flex-col gap-[10px] lg:gap-[24px] w-[100%]'>
-      {data?.map((item: dataType)=>{
+      {data?.map((item: IDataType)=>{
         return(
         <div key={item.id}>
         <Card className="flex justify-end h-[237px] w-[100%] overflow-hidden">
