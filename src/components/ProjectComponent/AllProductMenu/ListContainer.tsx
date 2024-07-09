@@ -6,26 +6,11 @@ import {
   CardContent,
   CardFooter,
 } from "../../ui/card"
-// import cardImage from '../../../assets/images/1.jfif'
 const ListContainer = () => {
-  // let data=[1,2,3,4,5];
   const [data, setData] = React.useState([])
   React.useEffect(() => {
-    let tr= fetch("http://localhost:5173/src/data/data.json").then(data=>data.json()).then(data=>setData(data))
+     fetch("http://localhost:5173/src/data/data.json").then(data=>data.json()).then(data=>setData(data))
   }, [])
-  // let r = [{"r":1,"s":"d"}];
-//   type dataType= {
-//     id: number,
-//     name: string,
-//     isNew: boolean,
-//     discount: (string | number),
-//     evaluation: number,
-//     price: number,
-//     picture: string,
-//     category: string,
-//     details: string
-
-// }
   return (
     <div className='ListContainer md:w-auto lg:w-[893px] flex flex-col gap-[10px] lg:gap-[24px] w-[100%]'>
       {data?.map((item: IDataType)=>{

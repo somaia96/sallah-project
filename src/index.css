@@ -1,7 +1,7 @@
 @tailwind base;
   @tailwind components;
   @tailwind utilities;
-
+/******************* General *******************/
   @layer base {
     :root {
       --background: 0 0% 100%;
@@ -79,12 +79,11 @@
   }
   body{
   font-family: DIN Next LT Arabic;
-
   }
-  /* AllProductMenu */
+/******************* General *******************/
+
+  /******************* AllProductMenu *******************/
   .AllProductMenu{
-/* display: flex;
-flex-direction: column; */
   }
   /* Header */
   .Header{
@@ -96,25 +95,12 @@ flex-direction: column; */
 }
 .TopHeader .contact ul,
 .TopHeader .numbers{
-  /* align-items: center; */
 }
 .TopHeader .contact ul li
 /* ,.TopHeader .numbers span */
 {
   /* position: relative; */
 }
-/* .TopHeader .contact ul li:not(li:first-child)::after
-,.TopHeader .numbers span:not(span:last-child)::after
-{
-     content: "";
-     position: absolute;
-     background-color: #D6D6D6;
-     width: 1px;
-     height: 10px;
-     top: 50%;
-     right: -8px;
-     transform: translate(0%,-50%);
-} */
   /* TopHeader */
 
   /* Headerr */
@@ -157,9 +143,9 @@ flex-direction: column; */
 }
 /* Filter */
 /* ContentContainer */
-  /* AllProductMenu */
+  /******************* AllProductMenu *******************/
 
-/* Page Not Found 404 */
+/****************** Page Not Found 404 *******************/
 #handboy
 {
    animation: swing ease-in-out 1.3s infinite alternate;
@@ -193,4 +179,4 @@ flex-direction: column; */
     0% { transform: rotate(6deg); }
     100% { transform: rotate(-6deg); }
 }
-/* Page Not Found 404 */
+/**************** Page Not Found 404 *********************/

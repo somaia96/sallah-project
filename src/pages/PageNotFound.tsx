@@ -4,7 +4,7 @@ const PageNotFound = () => {
   return (
     <div>
       {/* <h1 className='text-center'>Page Not Found</h1> */}
-      <a target="_blank" href="/">
+      <a href="/">
   <div className="container">
   <div className="row">
     <div className="col-sm-12 col-md-12 mt-5 mb-5">
