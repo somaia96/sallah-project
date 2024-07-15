@@ -5,18 +5,27 @@ import {
   Card,
   CardContent,
   CardFooter,
-} from "../ui/card"
-const ListContainer = () => {
+} from "../ui/card";
+type grid={
+  grid:number
+}
+const ListContainer = ({grid}:grid) => {
+  // let grid=true;
+// const [grid, setGrid] = React.useState(true)
+
   const [data, setData] = React.useState([])
   React.useEffect(() => {
      fetch("http://localhost:5173/src/data/data.json").then(data=>data.json()).then(data=>setData(data))
   }, [])
   return (
-    <div className='ListContainer md:w-auto lg:w-[893px] flex flex-col gap-[10px] lg:gap-[24px] w-[100%]'>
+    <div className={grid?'grid w-[100%] grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-3':
+    'ListContainer md:w-auto flex flex-col gap-[10px] lg:gap-[24px] w-[100%]'}
+    >
       {data?.map((item: IDataType)=>{
         return(
         <div key={item.id}>
-        <Card className="flex justify-end h-[237px] w-[100%] overflow-hidden">
+        <Card className={grid?'flex flex-col-reverse border overflow-hidden':
+        "flex justify-end h-[237px] w-[100%] overflow-hidden"}>
         <div className="w-[100%] max-w-[100%]">
         <CardContent dir="rtl" className="p-[--spacing-lg] md:p-[--spacing-xl]">
             <div className="grid w-full items-center gap-[2px] sm:gap-[4px]">
@@ -41,9 +50,9 @@ const ListContainer = () => {
           <Button className="bg-transparent font-bold text-gray-600 w-[100%] border-2 border-gray-100">* أضف للسلة</Button>
         </CardFooter>
         </div>
-        <div className="w-[235px] flex justify-center items-center relative">
+        <div className={(grid?"w-[auto]":"w-[235px]") +" flex justify-center items-center relative"}>
         <span className={"hidden"}>jkhg</span>
-          <img className="lg:h-[100%] w-[118px] lg:w-[235px] max-w-none overflow-hidden" src={item.picture} alt="" />
+          <img className={(grid?"":"w-[118px]")+" lg:h-[100%] lg:w-[235px] max-w-none overflow-hidden"} src={item.picture} alt="" />
           </div>
   
       </Card>

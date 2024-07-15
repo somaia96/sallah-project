@@ -9,21 +9,24 @@ import { Label } from "../ui/label"
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group"
 import * as Slider from '@radix-ui/react-slider';
 import ad from "../../assets/images/svg.svg"
-const Filter = () => {
+type closey={
+  closey:number,
+  setClosey:any
+}
+const Filter = ({closey,setClosey}:closey) => {
   const [priceStart, setPriceStart] = useState<number>(0)
   const [priceEnd, setPriceEnd] = useState<number>(100)
-  const [closey, setClosey] = useState<number>(1)
   function handleClick() {
       setClosey(1)
   }
   return (
-    <div dir='rtl' className={(closey?"hidden":"flex")+' Filter z-10 sm:[position:unset] fixed bg-opacity-90 sm:relative w-[100%] sm:w-[auto] right-0 top-0 text-black bg-[#1D1F1F] sm:bg-opacity-100 h-[100vh] sm:h-[auto] flex sm:flex flex-col gap-5'}>
-      <div className="content closed border rounded-[4px] flex-col w-[342px] sm:w-[100%] bg-white right-0 top-0 h-[100%] sm:[position:unset] overflow-hidden z-10 fixed">
+    <div dir='rtl' className={(closey?"hidden":"flex")+' Filter z-10 md:[position:unset] fixed bg-opacity-90 md:relative w-[100%] md:w-[auto] right-0 top-0 text-black bg-[#1D1F1F] md:bg-white md:bg-opacity-100 h-[100vh] md:h-[auto] flex md:flex flex-col gap-5'}>
+      <div className="content closed border rounded-[4px] flex-col w-[342px] md:w-[100%] bg-white right-0 top-0 h-[100%] md:h-[auto] md:[position:unset] overflow-hidden z-10 fixed">
       <div onClick={handleClick}>
-      <i className=" fa-solid fa-close close sm:hidden"></i>
+      <i className=" fa-solid fa-close close md:hidden"></i>
       </div>
-      <h3 className="sm:hidden sm:m-0 px-[--spacing-xl] sm:w-0 my-4" dir="rtl">فلترة المنتجات</h3>
-      <hr className="sm:hidden sm:w-0 sm:m-0 w-[120%] mx-[-20%]" />
+      <h3 className="md:hidden md:m-0 px-[--spacing-xl] md:w-0 my-4" dir="rtl">فلترة المنتجات</h3>
+      <hr className="md:hidden md:w-0 md:m-0 w-[120%] mx-[-20%]" />
       <Accordion type="multiple" className="w-full">
       <AccordionItem value="item-1" className='px-5'>
         <AccordionTrigger className='font-bold'>الفئة</AccordionTrigger>
