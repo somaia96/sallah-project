@@ -1,21 +1,22 @@
-import React, { useState } from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 type closey={
   setClosed:any
  }
 const Details = ({setClosed}:closey) => {
-
-  // const [closed, setClosed] = useState(1);
   const clickHandle=()=>{
     setClosed(0)
   }
+
   return (
     <div dir='rtl' className='Details py-[--spacing-xl]'>
       <div className="container flex flex-wrap md:items-center justify-between md:gap-[--spacing-3xl]">
+      <Link to="/products">
         
         <div className="logo flex items-center md:order-1">
-            <div onClick={clickHandle}>
+        <div onClick={clickHandle}>
               <i className="fa-solid text-[--primary] ml-[--spacing-xl] fa-2xl fa-bars sm:hidden"></i>
-            </div> {/* <i className="fa-solid text-[--primary] fa-2xl fa-home"></i> */}
+            </div>
             <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clip-path="url(#clip0_6582_13536)">
                 <path d="M23.2508 24.8008C21.5458 24.8008 20.1508 26.1958 20.1508 27.9008C20.1508 29.6058 21.5458 31.0008 23.2508 31.0008C24.9558 31.0008 26.3508 29.6058 26.3508 27.9008C26.3508 26.1958 24.9558 24.8008 23.2508 24.8008ZM12.4008 24.8008C10.6958 24.8008 9.30078 26.1958 9.30078 27.9008C9.30078 29.6058 10.6958 31.0008 12.4008 31.0008C14.1058 31.0008 15.5008 29.6058 15.5008 27.9008C15.5008 26.1958 14.1058 24.8008 12.4008 24.8008Z" fill="#62D0B6"/>
@@ -30,6 +31,8 @@ const Details = ({setClosed}:closey) => {
 
             <h2 className='font-bold text-gray-600 font-[700] [letter-spacing:2px]'>متجر<br/>سلة</h2>
           </div>
+        </Link>
+
         <div className="cart flex gap-[--spacing-lg] md:order-3">
           <div className='bg-gray-50 rounded-[50%] p-[16px]'>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

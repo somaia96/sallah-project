@@ -164,3 +164,21 @@ display: none;
 }
 }
 /* close button filter & titles navbar */
+/* new | discount  badge */
+.new::after, .discount::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(0, -50%);
+  border: 10px solid;
+  border-color: transparent;
+}
+.new::after{
+border-left-color: var(--primary);
+}
+.discount::after {
+border-left-color:  #F55157;
+
+}
+/* new | discount  badge */
