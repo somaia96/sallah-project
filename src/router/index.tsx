@@ -1,23 +1,25 @@
-import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route, createBrowserRouter, Outlet } from "react-router-dom";
-import AllProductMenu from "../pages/AllProductMenu";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+} from "react-router-dom";
 import PageNotFound from "../pages/PageNotFound";
-import ProductDetails from "../pages/ProductDetails";
 import Home from "../pages/Home";
 import Layout from "../pages/Layout";
-export default function Router() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-        <Route path="/allproduct" element={<Outlet/>} >
-        <Route index element={<AllProductMenu />} />
-        <Route path="/allproduct/detail" element={<ProductDetails/>} />
+import Products from "../pages/Products";
+import Details from "../pages/Details";
+
+export const router = createBrowserRouter(
+  createRoutesFromElements(
+    <>
+      <Route path="/" element={<Layout />} errorElement={<PageNotFound />}>
+        <Route index element={<Home />} />
+        <Route path="products" >
+          <Route index element={<Products />} />
+          <Route path=":id" element={<Details />} />
         </Route>
-        </Route>
-        <Route path="*" element={<PageNotFound />} />
-      </Routes>
-    </BrowserRouter>
-  );
-}
+      </Route>
+      <Route path="*" element={<PageNotFound/>}/>
+    </>
+  )
+);

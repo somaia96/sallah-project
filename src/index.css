@@ -1,4 +1,4 @@
-@tailwind base;
+  @tailwind base;
   @tailwind components;
   @tailwind utilities;
 /******************* General *******************/
@@ -33,6 +33,13 @@
       --ring: 222.2 84% 4.9%;
 
       --radius: 0.5rem;
+      --primary:#62D0B6;
+      --spacing-lg:8px;
+      --spacing-xl:16px;
+      --spacing-2xl:24px;
+      --spacing-3xl:32px;
+      --color-BG:#1D1F1F;
+
     }
 
     .dark {
@@ -82,68 +89,13 @@
   }
 /******************* General *******************/
 
-  /******************* AllProductMenu *******************/
-  .AllProductMenu{
-  }
-  /* Header */
-  .Header{
-    
-  }
+  /******************* Products *******************/
   /* TopHeader */
 .TopHeader{
   font-family: DIN Next LT Arabic;
 }
-.TopHeader .contact ul,
-.TopHeader .numbers{
-}
-.TopHeader .contact ul li
-/* ,.TopHeader .numbers span */
-{
-  /* position: relative; */
-}
-  /* TopHeader */
-
-  /* Headerr */
-  .Headerr{
-
-  }
-  /* Details */
-  .Details{
-
-  }
-  /* Details */
-
-  /* Titles */
-.Titles{
-
-}
-  /* Titles */
-  /* Headerr */
-/* Header */
-
-/* BreadCrumb */
-.BreadCrumb{
-
-}
-/* BreadCrumb */
-
-/* ContentContainer */
-.ContentContainer{
-
-}
-/* ListContainer */
-.ListContainer{
-
-}
-/* ListContainer */
-
-/* Filter */
-.Filter{
-
-}
-/* Filter */
-/* ContentContainer */
-  /******************* AllProductMenu *******************/
+/* TopHeader */
+  /******************* Products *******************/
 
 /****************** Page Not Found 404 *******************/
 #handboy
@@ -180,3 +132,8 @@
     100% { transform: rotate(-6deg); }
 }
 /**************** Page Not Found 404 *********************/
+@media (min-width:900px) {
+  .container{
+    max-width: 1200px;
+  }
+}
