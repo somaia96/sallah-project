@@ -132,8 +132,35 @@
     100% { transform: rotate(-6deg); }
 }
 /**************** Page Not Found 404 *********************/
-@media (min-width:900px) {
+@media (min-width:900px) and (max-width:1024px) {
   .container{
     max-width: 1200px;
   }
 }
+
+/* close button filter & titles navbar */
+.close{
+  position: fixed;
+  right: 352px;
+  top: 20px;
+  color: white;
+  background-color: red;
+  padding: 9px;
+  border-radius: 50%;
+  z-index: 5;
+}
+.closed::after{
+  content: "";
+  position: fixed;
+  width: 25px;
+  height: 34px;
+  background-color: red;
+  top: 20px;
+  right: 340px;
+}
+@media (min-width:640px) {
+.closed::after{
+display: none;
+}
+}
+/* close button filter & titles navbar */
