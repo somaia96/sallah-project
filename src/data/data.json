@@ -5,7 +5,7 @@
       "details": "This smartwatch is packed with features to keep you connected and on top of your health.",
       "category": "smartwatch",
       "price": 299.99,
-      "evaluation": 4.5,
+      "evaluation": 3.5,
       "isNew": true,
       "discount": 0,
       "picture": "./src/assets/images/1.jfif"
@@ -16,7 +16,7 @@
       "details": "These noise-canceling headphones provide immersive sound and long battery life.",
       "category": "headphone",
       "price": 149.99,
-      "evaluation": 4.8,
+      "evaluation": 2.8,
       "isNew": false,
       "discount": "25%",
       "picture": "./src/assets/images/2.jfif"
@@ -71,7 +71,7 @@
       "details": "These noise-canceling headphones provide immersive sound and long battery life.",
       "category": "headphone",
       "price": 149.99,
-      "evaluation": 4.8,
+      "evaluation": 1.8,
       "isNew": false,
       "discount": "25%",
       "picture": "./src/assets/images/2.jfif"

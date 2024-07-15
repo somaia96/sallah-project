@@ -13,13 +13,25 @@ const ListContainer = ({grid}:grid) => {
   const [data, setData] = React.useState([])
   React.useEffect(() => {
      fetch("http://localhost:5173/src/data/data.json").then(data=>data.json()).then(data=>setData(data))
-
+ 
   }, [])
   return (
     <div className={grid?'grid w-[100%] grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-3':
     'ListContainer md:w-auto flex flex-col gap-[10px] lg:gap-[24px] w-[100%]'}
     >
       {data?.map((item: IDataType)=>{
+           let stars =[]
+           for(let i=0;i<Math.floor(item.evaluation);i++){
+             stars.push(<i className="text-[#FFC62A] fa-solid fa-star"></i>);
+           }
+           if(Math.floor(item.evaluation)!=item.evaluation && Math.ceil(item.evaluation)!=item.evaluation){
+            stars.push(<i className="text-[#FFC62A] fa-regular fa-star-half-stroke"></i>);
+
+           }
+           for(let i=0;i<Math.floor(5 - item.evaluation);i++){
+            stars.push(<i className="fa-regular fa-star"></i>);
+          }
+          
         return(
         <div key={item.id} className="relative">
           <span className={(item.isNew?"new bg-[--primary]":item.discount!=0?"discount bg-[#F55157]":"hidden") +" relative top-[60px] left-[calc(100%-212px)] text-white p-2 z-[1]"}>{item.isNew && "جديد"}{item.discount!=0 && "خصم 25%"}</span>
@@ -39,11 +51,11 @@ const ListContainer = ({grid}:grid) => {
               شاشة سوبر ريتينا XDR مقاس 6.1 بوصة
               </div>
               <div className="space-y-1.5 text-[14px] text-gray-300">
-              <i className="text-[#FFC62A] fa-solid fa-star"></i>
-              <i className="text-[#FFC62A] fa-solid fa-star"></i>
-              <i className="text-[#FFC62A] fa-solid fa-star"></i>
-              <i className="text-[#FFC62A] fa-regular fa-star-half-stroke"></i>
-              <i className="fa-regular fa-star"></i>
+                  {stars.map((star)=>{
+                    return(
+                      star
+                    )
+                  })}
                 <span> ({item.evaluation}) </span>
               </div>
               <div className="flex space-y-1.5 gap-3 font-bold text-[14px] text-[#F55157]">
