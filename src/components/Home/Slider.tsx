@@ -7,40 +7,22 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-  // type CarouselApi,
 } from "../ui/carousel"
 import { Button } from '../ui/button'
 const Slider = () => {
-  // const [api, setApi] = React.useState<CarouselApi>()
-  // const [current, setCurrent] = React.useState(0)
-  // const [count, setCount] = React.useState(0)
- 
-  // React.useEffect(() => {
-  //   if (!api) {
-  //     return
-  //   }
- 
-  //   setCount(api.scrollSnapList().length)
-  //   setCurrent(api.selectedScrollSnap() + 1)
- 
-  //   api.on("select", () => {
-  //     setCurrent(api.selectedScrollSnap() + 1)
-  //   })
-  // }, [api])
  
   return (
     <div className='bg-bottom bg-cover bg-no-repeat flex justify-center items-center bg-[url("../../src/assets/images/Home/39.png")]'>
  <Carousel 
-//  plugins={[
-//         Autoplay({
-//           delay: 2000,
-//         }),
-//       ]} 
+ plugins={[
+        Autoplay({
+          delay: 2000,
+        }),
+      ]} 
       opts={{
     align: "start",
     loop: true,
-  }} 
-  // setApi={setApi} 
+  }}  
   className="container max-w-3xl">
         <CarouselContent>
           {Array.from({ length: 5 }).map((_, index) => (
