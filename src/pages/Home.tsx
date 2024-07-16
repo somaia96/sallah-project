@@ -24,29 +24,22 @@ const Home = () => {
         <Best />
         <Special />
       </div>
-
       <BestSale />
-
       <div className="container">
-
         <Categories />
         <Ads />
         <Offers />
       </div>
       <New />
       <div className="container">
-
         <More />
       </div>
-
       <Sale />
       <div className="container">
-
         <Featured />
       </div>
       <Vision />
       <div className="container">
-
         <Client />
         <Articles />
         <Brands />
