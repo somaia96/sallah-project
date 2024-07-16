@@ -1,9 +1,11 @@
 import React from 'react'
+import Head from './Head'
 
 const Client = () => {
   return (
     <div>
-      Client
+            <Head title="اراء العملاء" description="بيتم استعراض بعض آراء وتعليقات المستخدمين"/>
+
     </div>
   )
 }

@@ -1,9 +1,11 @@
 import React from 'react'
+import Head from './Head'
 
 const Offers = () => {
   return (
     <div>
-      Offers
+            <Head title="عروض تنتهى قريبا" description='تسوق احدث المنتجات المميزة المضافة جديد'/>
+
     </div>
   )
 }

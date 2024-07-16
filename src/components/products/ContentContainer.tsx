@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import ListContainer from './products/products'
-import Filter from './categories/Filter'
+import Products from './Products'
+import Filter from '../categories/Filter'
 
 const ContentContainer = () => {
   const [closey, setClosey] = useState<number>(1)
@@ -47,7 +47,7 @@ const ContentContainer = () => {
               <div>من الاقل للاعلى</div>
             </div>
           </div>
-          <ListContainer grid={grid} />
+          <Products grid={grid} />
         </div>
         <Filter closey={closey} setClosey={setClosey} />
       </div>

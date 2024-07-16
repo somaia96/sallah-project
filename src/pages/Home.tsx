@@ -2,7 +2,7 @@ import Best from "../components/Home/Best"
 import BestSale from "../components/Home/BestSale"
 import Categories from "../components/Home/Categories"
 import Features from "../components/Home/Features"
-import Slider  from "../components/Home/Slider"
+import Slider from "../components/Home/Slider"
 import Special from "../components/Home/Special"
 import Ads from "../components/Home/Ads"
 import Offers from "../components/Home/Offers"
@@ -18,33 +18,38 @@ import Brands from "../components/Home/Brands"
 const Home = () => {
   return (
     <div>
-      <Slider/>
+      <Slider />
       <div className="container">
-      <Features/>
-      <Best/>
-      <Special/>
-      </div>
-      <BestSale/>
-      <div className="container">
-
-      <Categories/>
-      <Ads/>
+        <Features />
+        <Best />
+        <Special />
       </div>
 
-      <Offers/>
+      <BestSale />
+
       <div className="container">
 
-      <New/>
-      <More/>
-      <Sale/>
-      <Featured/>
+        <Categories />
+        <Ads />
+        <Offers />
       </div>
-      <Vision/>
+      <New />
       <div className="container">
 
-      <Client/>
-      <Articles/>
-      <Brands/>
+        <More />
+      </div>
+
+      <Sale />
+      <div className="container">
+
+        <Featured />
+      </div>
+      <Vision />
+      <div className="container">
+
+        <Client />
+        <Articles />
+        <Brands />
       </div>
     </div>
   )

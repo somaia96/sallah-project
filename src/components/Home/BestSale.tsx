@@ -3,7 +3,10 @@ import React from 'react'
 const BestSale = () => {
   return (
     <div>
-      BestSale
+       <div className="container">
+       BestSale
+      </div>
+      
     </div>
   )
 }
