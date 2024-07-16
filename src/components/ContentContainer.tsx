@@ -10,7 +10,7 @@ const ContentContainer = () => {
   }
 
   return (
-    <div className='ContentContainer py-[24px] sm:p-[40px] md:px-0'>
+    <div className='ContentContainer py-[24px] sm:p-[40px] md:p-0 md:pb-[40px]'>
       <div className="flex justify-between gap-10">
         <div className='w-[100%]'>
           <div className="sort flex mb-5" dir='rtl'>

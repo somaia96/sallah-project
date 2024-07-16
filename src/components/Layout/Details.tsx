@@ -12,7 +12,6 @@ const Details = ({setClosed}:closey) => {
     <div dir='rtl' className='Details py-[--spacing-xl]'>
       <div className="container flex flex-wrap md:items-center justify-between md:gap-[--spacing-3xl]">
       <Link to="/products">
-        
         <div className="logo flex items-center md:order-1">
         <div onClick={clickHandle}>
               <i className="fa-solid text-[--primary] ml-[--spacing-xl] fa-2xl fa-bars sm:hidden"></i>
