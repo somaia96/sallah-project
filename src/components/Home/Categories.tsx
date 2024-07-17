@@ -4,7 +4,7 @@ import Head from './Head'
 const Categories = () => {
   return (
     <div>
-            <Head title="تسوق حسب الفئات" description='تسوق احدث المنتجات المميزة المضافة جديد'/>
+      <Head title="تسوق حسب الفئات" description='تسوق احدث المنتجات المميزة المضافة جديد'/>
 
     </div>
   )
