@@ -3,7 +3,7 @@ import Head from './Head'
 
 const Categories = () => {
   return (
-    <div className='py-8'>
+    <div className='py-8 mb-3'>
       <Head title="تسوق حسب الفئات" description='تسوق احدث المنتجات المميزة المضافة جديد' />
       <div className='flex items-center'>
         <div className='flex flex-col items-center flex-1'>
