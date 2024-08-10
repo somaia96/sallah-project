@@ -1,4 +1,3 @@
-import React from 'react'
 import { Button } from '../ui/button'
 
 const BestSale = () => {
@@ -11,7 +10,7 @@ const BestSale = () => {
         <div className='flex-1 flex md:order-2 items-center md:items-start flex-col gap-5' dir='rtl'>
           <h1 className='font-bold text-4xl text-white'>افضل التخفيضات 2022</h1>
           <p className='text-gray-50 text-xl'>متجر سلة يوفر لك كل ماتحتاجه من إلكترونيات أو أثاث منزلي بالإضافة إلى أفضل التحفيضات على المنتجات , تسوق الان واستمتع بكل بالتخفيضات على المنتجات</p>
-          <Button className='w-[fit-content] bg-[--primary] hover:text-[--primary] text-xl'>اكتشف المزيد</Button>
+          <Button className='w-[fit-content] bg-[--primary] hover:text-teal-400 text-xl'>اكتشف المزيد</Button>
         </div>
       </div>
 

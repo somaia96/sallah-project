@@ -1,4 +1,3 @@
-import React from 'react'
 import Autoplay from "embla-carousel-autoplay"
 import { Card, CardContent } from "../ui/card"
 import {
@@ -29,10 +28,9 @@ const Slider = () => {
             <CarouselItem key={index}>
               <Card className='border-0 bg-transparent'>
                 <CardContent className="flex text-center gap-9 flex-col aspect-square items-center justify-center p-6">
-                  
                   <h1 className='font-bold text-4xl text-white'>افضل التخفيضات 2022</h1>
                   <p className='text-gray-50 text-xl'>متجر سلة يوفر لك كل ماتحتاجه من إلكترونيات أو أثاث منزلي بالإضافة إلى أفضل التحفيضات على المنتجات , تسوق الان واستمتع بكل بالتخفيضات على المنتجات</p>
-                  <Button className='bg-[--primary] hover:text-[--primary] text-xl'>اكتشف المزيد</Button>
+                  <Button className='bg-[--primary] hover:text-teal-400 text-xl'>اكتشف المزيد</Button>
                 </CardContent>
               </Card>
             </CarouselItem>
@@ -41,9 +39,6 @@ const Slider = () => {
         <CarouselPrevious className=' bg-[transparent]  text-white' />
         <CarouselNext className=' bg-[transparent]  text-white' />
       </Carousel>
-      {/* <div className="py-2 text-center text-sm text-muted-foreground">
-        Slide {current} of {count}
-      </div> */}
     </div>
   )
 }

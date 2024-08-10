@@ -1,4 +1,3 @@
-import React from 'react'
 import { Button } from '../ui/button'
 type info={
   title:string,
@@ -11,7 +10,7 @@ const Head = ({title,description}:info) => {
         <h2 className='font-bold text-xl'>{title}</h2>
         <p className='text-gray-400'>{description}</p>
         </div>
-        <Button className='border text-[--primary] border-[--primary]'>عرض الكل</Button>
+        <Button className='border text-teal-400 border-[--primary]'>عرض الكل</Button>
     </div>
   )
 }

@@ -1,61 +1,89 @@
-import React from 'react';
+import { Button } from "../ui/button"
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "../ui/sheet"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../ui/accordion"
 import { Link } from 'react-router-dom';
-type closey={
-  setClosed:any
- }
-const Details = ({setClosed}:closey) => {
-  const clickHandle=()=>{
-    setClosed(0)
-  }
+import SallahSvg from "../../assets/SVG/SallahSvg"
+import UserSvg from "../../assets/SVG/UserSvg"
+import CartSvg from "../../assets/SVG/CartSvg"
+import { Fragment } from "react/jsx-runtime";
 
+const Details = () => {
+  let login = [
+    { icon: <UserSvg />, label1: "مرحبا بك", label2: "تسجيل الدخول" },
+    { icon: <CartSvg width='24' height='24' />, label1: "سلة المشتريات", label2: "1200 رس" }
+  ]
   return (
     <div dir='rtl' className='Details py-[--spacing-xl]'>
       <div className="container flex flex-wrap md:items-center justify-between md:gap-[--spacing-3xl]">
-      <Link to="/products">
-        <div className="logo flex items-center md:order-1">
-        <div onClick={clickHandle}>
-              <i className="fa-solid text-[--primary] ml-[--spacing-xl] fa-2xl fa-bars sm:hidden"></i>
-            </div>
-            <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g clip-path="url(#clip0_6582_13536)">
-                <path d="M23.2508 24.8008C21.5458 24.8008 20.1508 26.1958 20.1508 27.9008C20.1508 29.6058 21.5458 31.0008 23.2508 31.0008C24.9558 31.0008 26.3508 29.6058 26.3508 27.9008C26.3508 26.1958 24.9558 24.8008 23.2508 24.8008ZM12.4008 24.8008C10.6958 24.8008 9.30078 26.1958 9.30078 27.9008C9.30078 29.6058 10.6958 31.0008 12.4008 31.0008C14.1058 31.0008 15.5008 29.6058 15.5008 27.9008C15.5008 26.1958 14.1058 24.8008 12.4008 24.8008Z" fill="#62D0B6"/>
-                <path d="M31 6.2L27.9 21.7H9.3L6.2 3.1H0V0H8.835L9.3 2.635L11.935 18.6H25.42L26.04 15.5H15.5V12.4H26.66L27.28 9.3H15.5V6.2H31Z" fill="#62D0B6"/>
-              </g>
-              <defs>
-                <clipPath id="clip0_6582_13536">
-                 <rect width="31" height="31" fill="white"/>
-                </clipPath>
-              </defs>
-            </svg>
-
-            <h2 className='font-bold text-gray-600 font-[700] [letter-spacing:2px]'>متجر<br/>سلة</h2>
+        <Link to="/products">
+          <div className="logo flex items-center md:order-1">
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button>
+                  <i className="fa-solid text-teal-400 ml-[--spacing-xl] fa-2xl fa-bars md:hidden"></i>
+                </Button>
+              </SheetTrigger>
+              <SheetContent className="p-0">
+                <SheetHeader>
+                  <SheetTitle>
+                    <h3 className="md:hidden md:m-0 px-[--spacing-xl] md:w-0 my-4" dir="rtl">جميع الاقسام</h3>
+                  </SheetTitle>
+                  <SheetDescription>
+                    <hr />
+                  </SheetDescription>
+                </SheetHeader>
+                <div className="grid gap-4 md:py-4">
+                  <Accordion type="multiple" className="w-full">
+                    {Array.from({ length: 4 }).map((_, i) => (
+                      <AccordionItem value={`item-${i}`} className='px-5'>
+                        <AccordionTrigger dir="rtl" className='font-bold'>كل المنتجات</AccordionTrigger>
+                        <AccordionContent dir="rtl">
+                          <div className="flex items-center gap-2">
+                            الكل
+                          </div>
+                          {Array.from({ length: 5 }).map((_, i) => (
+                            <div key={i} className="flex items-center gap-2">
+                              Default
+                            </div>
+                          ))}
+                        </AccordionContent>
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
+                </div>
+              </SheetContent>
+            </Sheet>
+            <SallahSvg />
+            <h2 className='font-bold text-gray-600 font-[700] [letter-spacing:2px]'>متجر<br />سلة</h2>
           </div>
         </Link>
-
         <div className="cart flex gap-[--spacing-lg] md:order-3">
-          <div className='bg-gray-50 rounded-[50%] p-[16px]'>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 12.75C8.83 12.75 6.25 10.17 6.25 7C6.25 3.83 8.83 1.25 12 1.25C15.17 1.25 17.75 3.83 17.75 7C17.75 10.17 15.17 12.75 12 12.75ZM12 2.75C9.66 2.75 7.75 4.66 7.75 7C7.75 9.34 9.66 11.25 12 11.25C14.34 11.25 16.25 9.34 16.25 7C16.25 4.66 14.34 2.75 12 2.75Z" fill="#666666"/>
-              <path d="M20.5901 22.75C20.1801 22.75 19.8401 22.41 19.8401 22C19.8401 18.55 16.3202 15.75 12.0002 15.75C7.68015 15.75 4.16016 18.55 4.16016 22C4.16016 22.41 3.82016 22.75 3.41016 22.75C3.00016 22.75 2.66016 22.41 2.66016 22C2.66016 17.73 6.85015 14.25 12.0002 14.25C17.1502 14.25 21.3401 17.73 21.3401 22C21.3401 22.41 21.0001 22.75 20.5901 22.75Z" fill="#666666"/>
-            </svg>
-          </div>
-          <div className='hidden md:block'>
-            <h3 className='text-gray-600'>مرحبا بك</h3>
-            <h3 className='text-black font-bold'>تسجيل الدخول</h3>
-          </div>
-          <div className='bg-gray-50 rounded-[50%] p-[16px]'>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M5.31344 6.84335C5.29852 6.67833 5.31815 6.512 5.37107 6.35498C5.42398 6.19796 5.50903 6.05369 5.62078 5.93135C5.73254 5.80901 5.86855 5.7113 6.02016 5.64443C6.17176 5.57756 6.33564 5.54301 6.50133 5.54297H20.964C21.1427 5.54304 21.319 5.58323 21.48 5.66057C21.641 5.7379 21.7826 5.8504 21.8944 5.98978C22.0061 6.12915 22.0851 6.29184 22.1256 6.46583C22.166 6.63981 22.1669 6.82067 22.1281 6.99503L20.9061 12.5033C20.6959 13.4499 20.1691 14.2965 19.4127 14.9032C18.6563 15.51 17.7156 15.8405 16.7459 15.8404H10.019C8.95533 15.8404 7.93009 15.4426 7.14482 14.7252C6.35955 14.0077 5.87103 13.0224 5.7753 11.9631L5.31344 6.84335ZM7.06034 7.24727L7.47279 11.8097C7.53025 12.4456 7.8236 13.037 8.29513 13.4675C8.76665 13.898 9.38221 14.1365 10.0207 14.1361H16.7476C17.3293 14.1359 17.8935 13.9374 18.3471 13.5733C18.8008 13.2092 19.1167 12.7014 19.2427 12.1335L20.3283 7.24727H7.06034Z" fill="#666666"/>
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M1.78906 2.68418C1.78906 2.45818 1.87884 2.24143 2.03865 2.08162C2.19846 1.92181 2.41521 1.83203 2.64121 1.83203H5.63056C5.839 1.83224 6.04014 1.90885 6.19591 2.04735C6.35169 2.18585 6.4513 2.37664 6.47589 2.58363L7.16102 8.37996C7.18746 8.60461 7.12358 8.83056 6.98343 9.00811C6.84328 9.18565 6.63833 9.30025 6.41368 9.3267C6.18904 9.35314 5.96309 9.28926 5.78554 9.14911C5.60799 9.00895 5.49339 8.80401 5.46695 8.57936L4.87214 3.53463H2.64121C2.41521 3.53463 2.19846 3.44485 2.03865 3.28504C1.87884 3.12523 1.78906 2.91019 1.78906 2.68418ZM9.45842 20.2947C9.68442 20.2947 9.90117 20.2049 10.061 20.0451C10.2208 19.8853 10.3106 19.6686 10.3106 19.4426C10.3106 19.2166 10.2208 18.9998 10.061 18.84C9.90117 18.6802 9.68442 18.5904 9.45842 18.5904C9.23242 18.5904 9.01567 18.6802 8.85586 18.84C8.69605 18.9998 8.60627 19.2166 8.60627 19.4426C8.60627 19.6686 8.69605 19.8853 8.85586 20.0451C9.01567 20.2049 9.23242 20.2947 9.45842 20.2947ZM9.45842 21.999C9.79414 21.999 10.1266 21.9329 10.4367 21.8044C10.7469 21.676 11.0287 21.4876 11.2661 21.2503C11.5035 21.0129 11.6918 20.7311 11.8203 20.4209C11.9487 20.1107 12.0149 19.7783 12.0149 19.4426C12.0149 19.1069 11.9487 18.7744 11.8203 18.4643C11.6918 18.1541 11.5035 17.8723 11.2661 17.6349C11.0287 17.3975 10.7469 17.2092 10.4367 17.0807C10.1266 16.9523 9.79414 16.8861 9.45842 16.8861C8.78041 16.8861 8.13016 17.1555 7.65073 17.6349C7.17131 18.1143 6.90197 18.7646 6.90197 19.4426C6.90197 20.1206 7.17131 20.7708 7.65073 21.2503C8.13016 21.7297 8.78041 21.999 9.45842 21.999ZM17.2334 20.2947C17.4594 20.2947 17.6762 20.2049 17.836 20.0451C17.9958 19.8853 18.0856 19.6686 18.0856 19.4426C18.0856 19.2166 17.9958 18.9998 17.836 18.84C17.6762 18.6802 17.4594 18.5904 17.2334 18.5904C17.0074 18.5904 16.7907 18.6802 16.6309 18.84C16.4711 18.9998 16.3813 19.2166 16.3813 19.4426C16.3813 19.6686 16.4711 19.8853 16.6309 20.0451C16.7907 20.2049 17.0074 20.2947 17.2334 20.2947ZM17.2334 21.999C17.5692 21.999 17.9016 21.9329 18.2118 21.8044C18.5219 21.676 18.8037 21.4876 19.0411 21.2503C19.2785 21.0129 19.4668 20.7311 19.5953 20.4209C19.7238 20.1107 19.7899 19.7783 19.7899 19.4426C19.7899 19.1069 19.7238 18.7744 19.5953 18.4643C19.4668 18.1541 19.2785 17.8723 19.0411 17.6349C18.8037 17.3975 18.5219 17.2092 18.2118 17.0807C17.9016 16.9523 17.5692 16.8861 17.2334 16.8861C16.5554 16.8861 15.9052 17.1555 15.4258 17.6349C14.9463 18.1143 14.677 18.7646 14.677 19.4426C14.677 20.1206 14.9463 20.7708 15.4258 21.2503C15.9052 21.7297 16.5554 21.999 17.2334 21.999Z" fill="#666666"/>
-             </svg>
-          </div>
-          <div>
-            <h3 className='text-gray-600'>سلة المشتريات</h3>
-            <h3 className='text-black font-bold'>1200 رس</h3>
-          </div>
+          {login.map((log, i) => (
+            <Fragment key={i}>
+              <div className='bg-gray-50 rounded-[50%] p-[16px]'>
+                {log.icon}
+              </div>
+              <div className={(i==0 ? 'hidden ':"") +'md:block'}>
+                <h3 className='text-gray-600'>{log.label1}</h3>
+                <h3 className='text-black font-bold'>{log.label2}</h3>
+              </div>
+            </Fragment>
+          ))}
         </div>
         <div className="search mt-4 md:mt-0 w-[100%] md:flex-1 md:order-2">
-          <input className='border w-[100%] p-[--spacing-lg]' type="search" placeholder='ابحث عن ما تريد' name="" id="" />
+          <input className='border w-[100%] p-[--spacing-lg]' type="search" placeholder='ابحث عن ما تريد' name="search" id="search" />
         </div>
       </div>
     </div>

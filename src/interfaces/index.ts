@@ -19,3 +19,20 @@ export interface IDataType {
   category: string;
   details: string;
 }
+
+export interface IFilter {
+  filter:string;
+  num:string | null;
+  data:{
+    id:number,
+    name?:string,
+    color?:string,
+    num:number
+  }[] | null;
+}
+export interface ICategories {
+  id:number;
+  name:string;
+  img:string;
+  num:string;
+}

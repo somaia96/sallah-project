@@ -1,4 +1,3 @@
-import React from 'react'
 import Subscribe from './Subscribe'
 import AboutUs from './AboutUs'
 import Rights from './Rights'

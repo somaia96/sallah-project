@@ -1,54 +1,63 @@
-import React from 'react'
-
 const AboutUs = () => {
-  return (
-    <div dir='rtl' className='py-[48px]'>
-        <div className="container flex flex-col gap-[--spacing-2xl] md:flex-row">
-            <div className="about flex-1">
-                <h3 className='font-bold mb-[--spacing-xl]'>عن متجرنا</h3>
-                <p className='text-gray-400'>متجر سلة من افضل المتاجر التى تقوم ببيع<br className='md:hidden'/> المنتجات الرقمية بأفضل الاسعار وماركات عالمية<br className='md:hidden'/> تسوق الان واطلع على المزيد من التصاميم<br className='md:hidden'/> واستمتع بأفضل العروض والخصومات</p>
+    let arrow = <i className="fa-solid fa-angles-left"></i>;
+    let iconStyle = "fa-brands border border-gray-100 rounded-[50%] hover:text-teal-400 hover:border-[--primary] p-[--spacing-lg] w-[17px] "
+    let icons = ["fa-facebook-f", "fa-twitter", "fa-instagram", "fa-snapchat"]
+    type Info = {name:string;arr:(string[] | {app:string;number:string}[])}[];
+    let infos:Info = [
+        {
+            name: "حسابي",
+            arr: ["حسابي", "طلباتي", "سلة المشتريات", "المفضلة"]
+        },
+        {
+            name: "روابط مهمة",
+            arr: ["من نحن", "سياسة الخصوصية", "الشروط و الاحكام", "الدعم الفني"]
+        },
+        {
+            name: "تواصل معنا",
+            arr: [
+                { app: "واتساب :", number: "009612345678932" },
+                { app: "موبايل :", number: "009612345678932" },
+                { app: "البريد :", number: "https://salla.sa" }
+            ]
+        }
+    ]
+    
+    return (
+        <div dir='rtl' className='py-[48px]'>
+            <div className="container flex flex-col gap-[--spacing-2xl] md:flex-row">
+                <div className="about flex-1">
+                    <h3 className='font-bold mb-[--spacing-xl]'>عن متجرنا</h3>
+                    <p className='text-gray-400'>متجر سلة من افضل المتاجر التى تقوم ببيع<br className='md:hidden' />
+                        المنتجات الرقمية بأفضل الاسعار وماركات عالمية<br className='md:hidden' />
+                        تسوق الان واطلع على المزيد من التصاميم<br className='md:hidden' />
+                        واستمتع بأفضل العروض والخصومات
+                    </p>
                 </div>
-            <div className="acount flex-1">
-                <h3 className='font-bold mb-[--spacing-xl]'>حسابي</h3>
-                <ul className='text-gray-400'>
-                    <li className='hover:mr-[--spacing-lg] hover:text-[--primary]'><i className="fa-solid fa-angles-left"></i> حسابي</li>
-                    <li className='hover:mr-[--spacing-lg] hover:text-[--primary]'><i className="fa-solid fa-angles-left"></i> طلباتي</li>
-                    <li className='hover:mr-[--spacing-lg] hover:text-[--primary]'><i className="fa-solid fa-angles-left"></i> سلة المشتريات</li>
-                    <li className='hover:mr-[--spacing-lg] hover:text-[--primary]'><i className="fa-solid fa-angles-left"></i> المفضلة</li>
-                </ul>
+                {infos.map((info, i) => {
+                    return (
+                        <div key={i} className="flex-1">
+                            <h3 className='font-bold mb-[--spacing-xl]'>{info.name}</h3>
+                            <ul className='text-gray-400'>
+                                {info.arr.map((contact,index) => (
+                                    <li key={index} className='hover:mr-[--spacing-lg] hover:text-teal-400'>{arrow} {!contact.app ? contact : contact.app}<br />
+                                        {contact.number && <span>{contact.number}</span>}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    )
+                })}
+                <div className="follow flex-1">
+                    <h3 className='font-bold mb-[--spacing-xl]'>تابعنا على</h3>
+                    <ul className='text-gray-400 flex gap-[--spacing-lg]'>
+                        {icons.map((icon, i) => (
+                            <li key={i} className={`${icon} ${iconStyle}`}></li>
+                        ))}
+                    </ul>
                 </div>
-            <div className="links flex-1">
-                <h3 className='font-bold mb-[--spacing-xl]'>روابط مهمة</h3>
-                <ul className='text-gray-400'>
-                    <li className='hover:mr-[--spacing-lg] hover:text-[--primary]'><i className="fa-solid fa-angles-left"></i> من نحن</li>
-                    <li className='hover:mr-[--spacing-lg] hover:text-[--primary]'><i className="fa-solid fa-angles-left"></i> سياسة الخصوصية</li>
-                    <li className='hover:mr-[--spacing-lg] hover:text-[--primary]'><i className="fa-solid fa-angles-left"></i> الشروط و الاحكام</li>
-                    <li className='hover:mr-[--spacing-lg] hover:text-[--primary]'><i className="fa-solid fa-angles-left"></i> الدعم الفني</li>
-                </ul>
-                </div>
-            <div className="contact flex-1">
-                <h3 className='font-bold mb-[--spacing-xl]'>تواصل معنا</h3>
-                <ul className='text-gray-400'>
-                    <li className='hover:mr-[--spacing-lg] hover:text-[--primary]'><i className="fa-solid fa-angles-left"></i> واتساب :<br/>
-                    <span>009612345678932</span></li>
-                    <li className='hover:mr-[--spacing-lg] hover:text-[--primary]'><i className="fa-solid fa-angles-left"></i> موبايل :<br/>
-                    <span>009612345678932</span></li>
-                    <li className='hover:mr-[--spacing-lg] hover:text-[--primary]'><i className="fa-solid fa-angles-left"></i> البريد:<br/>
-                    <span>https://salla.sa</span></li>
-                </ul>
-                </div>
-            <div className="follow flex-1">
-                <h3 className='font-bold mb-[--spacing-xl]'>تابعنا على</h3>
-                <ul className='text-gray-400 flex gap-[--spacing-lg]'>
-                    <li className="fa-brands border border-gray-100 w-[17px] hover:text-[--primary] hover:border-[--primary] rounded-[50%] fa-facebook-f p-[--spacing-lg]"></li>
-                    <li className="fa-brands border border-gray-100 rounded-[50%] fa-twitter p-[--spacing-lg] hover:text-[--primary] hover:border-[--primary]"></li>
-                    <li className="fa-brands border border-gray-100 rounded-[50%] fa-instagram p-[--spacing-lg] hover:text-[--primary] hover:border-[--primary]"></li>
-                    <li className="fa-brands border border-gray-100 rounded-[50%] fa-snapchat p-[--spacing-lg] hover:text-[--primary] hover:border-[--primary]"></li>
-                </ul>
             </div>
         </div>
-    </div>
-  )
+    )
 }
 
 export default AboutUs

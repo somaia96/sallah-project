@@ -15,13 +15,13 @@ const Products = () => {
       <div className='container flex flex-col'>
         <Breadcrumb className='BreadCrumb sm:py-[--spacing-2xl]' dir='rtl'>
           <BreadcrumbList>
-            <BreadcrumbItem className="text-[--primary]">
+            <BreadcrumbItem className="text-primary">
               <BreadcrumbLink href='/'>
                 <BreadcrumbPage className="text-gray-400">الرئيسية</BreadcrumbPage>
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator>
-              <Slash className="text-[--primary]" />
+              <Slash className="text-primary" />
             </BreadcrumbSeparator>
             <BreadcrumbItem>
               <BreadcrumbPage className="text-gray-400">كل المنتجات</BreadcrumbPage>

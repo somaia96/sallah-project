@@ -12,8 +12,8 @@
 
       --popover: 0 0% 100%;
       --popover-foreground: 222.2 84% 4.9%;
-
-      --primary: 222.2 47.4% 11.2%;
+/* hsl */
+      --primary: 166 54% 60%;
       --primary-foreground: 210 40% 98%;
 
       --secondary: 210 40% 96.1%;
@@ -33,7 +33,7 @@
       --ring: 222.2 84% 4.9%;
 
       --radius: 0.5rem;
-      --primary:#62D0B6;
+      --primary:hsl(166, 54%, 60%);
       --spacing-lg:8px;
       --spacing-xl:16px;
       --spacing-2xl:24px;
@@ -138,32 +138,6 @@
   }
 }
 
-/* close button filter & titles navbar */
-.close{
-  position: fixed;
-  right: 352px;
-  top: 20px;
-  color: white;
-  background-color: red;
-  padding: 9px;
-  border-radius: 50%;
-  z-index: 5;
-}
-.closed::after{
-  content: "";
-  position: fixed;
-  width: 25px;
-  height: 34px;
-  background-color: red;
-  top: 20px;
-  right: 340px;
-}
-@media (min-width:640px) {
-.closed::after{
-display: none;
-}
-}
-/* close button filter & titles navbar */
 /* new | discount  badge */
 .new::after, .discount::after {
   content: "";
