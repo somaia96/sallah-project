@@ -47,7 +47,7 @@ const Details = () => {
                 <div className="grid gap-4 md:py-4">
                   <Accordion type="multiple" className="w-full">
                     {Array.from({ length: 4 }).map((_, i) => (
-                      <AccordionItem value={`item-${i}`} className='px-5'>
+                      <AccordionItem key={i} value={`item-${i}`} className='px-5'>
                         <AccordionTrigger dir="rtl" className='font-bold'>كل المنتجات</AccordionTrigger>
                         <AccordionContent dir="rtl">
                           <div className="flex items-center gap-2">

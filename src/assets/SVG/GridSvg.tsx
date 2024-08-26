@@ -1,4 +1,7 @@
-const GridSvg = ({grid}:{grid:number}) => {
+interface IProps{
+    grid:number;
+}
+const GridSvg = ({grid}:IProps) => {
     return (
         <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="0.5" y="0.5" width="33" height="33" rx="3.5" fill={grid ? "#62D0B6" : "white"} />

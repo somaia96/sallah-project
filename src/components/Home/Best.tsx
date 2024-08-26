@@ -1,5 +1,5 @@
 const Best = () => {
-  let pics = ["32", "16"];
+  let pics = [32, 16];
   return (
     <div className='flex gap-8 flex-col md:flex-row'>
       {pics.map((pic, i) => (

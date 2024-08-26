@@ -1,33 +1,12 @@
-import { Slash } from "lucide-react"
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "../components/ui/breadcrumb"
 
+import BreadCrumb from '../components/Home/BreadCrumb'
 import ContentContainer from '../components/products/ContentContainer'
+
 const Products = () => {
   return (
     <div className='Products'>
       <div className='container flex flex-col'>
-        <Breadcrumb className='BreadCrumb sm:py-[--spacing-2xl]' dir='rtl'>
-          <BreadcrumbList>
-            <BreadcrumbItem className="text-primary">
-              <BreadcrumbLink href='/'>
-                <BreadcrumbPage className="text-gray-400">الرئيسية</BreadcrumbPage>
-              </BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator>
-              <Slash className="text-primary" />
-            </BreadcrumbSeparator>
-            <BreadcrumbItem>
-              <BreadcrumbPage className="text-gray-400">كل المنتجات</BreadcrumbPage>
-            </BreadcrumbItem>
-          </BreadcrumbList>
-        </Breadcrumb>
+        <BreadCrumb />
         <ContentContainer />
       </div>
     </div>
