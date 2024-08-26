@@ -4,7 +4,7 @@ const Ads = () => {
     <div className='text-white'>
       <div className='flex gap-8 flex-col md:flex-row mb-[--spacing-2xl]'>
         {pics.map((pic, i) => (
-          <div key={i} className={`flex-1 text-right rounded bg-center flex justify-start items-center p-3 text-xl bg-[url("../../../src/assets/images/Home/${pic}.png")]`}>
+          <div key={i} style={{background:`url("../../../src/assets/images/Home/${pic}.png")`}} className={`flex-1 text-right rounded bg-center flex justify-start items-center p-3 text-xl`}>
             <div className='flex-1 h-[240px]'></div>
             <div className='flex-1'>
               <span className='text-gray-100'>سماعات ديجيتال</span>
