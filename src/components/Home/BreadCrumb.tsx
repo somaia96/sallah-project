@@ -1,4 +1,3 @@
-
 import { Slash } from "lucide-react"
 import {
   Breadcrumb,
@@ -9,6 +8,7 @@ import {
   BreadcrumbSeparator,
 } from "../../components/ui/breadcrumb"
 import { Fragment, useEffect, useState } from "react"
+
 const BreadCrumb = () => {
   let path = location.pathname
   const [paths, setPaths] = useState("")
@@ -22,7 +22,7 @@ const BreadCrumb = () => {
       <BreadcrumbList>
         <BreadcrumbItem className="text-primary">
           <BreadcrumbLink href='/'>
-            <BreadcrumbPage className="text-gray-400">الرئيسية</BreadcrumbPage>
+            <BreadcrumbPage className="text-primary">الرئيسية</BreadcrumbPage>
           </BreadcrumbLink>
         </BreadcrumbItem>
         {pathNames.length > 0 &&
@@ -36,7 +36,7 @@ const BreadCrumb = () => {
               {pathNames.length !== i + 1 ?
                 <>
                   <BreadcrumbItem className="text-primary">
-                    <BreadcrumbLink href={`/${path}`} className="text-gray-400">
+                    <BreadcrumbLink href={`/${path}`} className="text-primary">
                       {path}
                     </BreadcrumbLink>
                   </BreadcrumbItem>

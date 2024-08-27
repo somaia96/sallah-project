@@ -61,7 +61,7 @@ const Products = ({ grid,startIndex,endIndex}: grid) => {
                 </CardFooter>
               </div>
               <div className={(grid ? "w-[auto]" : "w-[235px]") + " flex justify-center items-center relative"}>
-                <img className={(grid ? "" : "w-[118px]") + " lg:h-[100%] lg:w-[235px] max-w-none overflow-hidden"} src={item.picture} alt="" />
+                <img className={(grid ? "" : "w-[118px]") + " lg:h-[100%] lg:w-[235px] max-w-none overflow-hidden"} src={"http://localhost:5173/"+item.picture} alt="" />
               </div>
             </Card>
           </div>

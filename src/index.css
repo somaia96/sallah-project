@@ -33,7 +33,7 @@
       --ring: 222.2 84% 4.9%;
 
       --radius: 0.5rem;
-      --primary:hsl(166, 54%, 60%);
+      --primary:166, 54%, 60%;
       --spacing-lg:8px;
       --spacing-xl:16px;
       --spacing-2xl:24px;
